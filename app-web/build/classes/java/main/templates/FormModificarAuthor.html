@@ -1,0 +1,27 @@
+</head>
+<body>
+<div >
+    <form th:object="${author}" action="/authors/modificar" method="POST">
+
+        <h2 >Modificar nuevo Autor</h2>
+
+        <div >
+            <label  >Id: </label>
+            <input  type="text" name="name" th:value="${author.id}">
+        </div>
+
+        <div >
+            <label >Nombre: </label>
+            <input  type="text" name="nombre" th:value="${author.first_name}" >
+        </div>
+        <div c>
+            <label >Apellido: </label>
+            <input  type="text" name="nombre" th:value="${author.last_name}" >
+        </div>
+
+        <button>Modificar</button>
+    </form>
+</div>
+
+</body>
+</html>

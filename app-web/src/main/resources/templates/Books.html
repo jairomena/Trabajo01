@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <h2 >Books</h2>
+        </div>
+        <div >
+            <form>
+                <table>
+                    <tbody>
+                    <tr >
+                        <th >ISBN</th>
+                        <th >Titulo</th>
+                        <th >Price</th>
+                        <th >AuthorID</th>
+                        <th th:colspan="2">Opciones</th>
+                    </tr>
+
+                    </tr>
+                    <tr th:each="book: ${books}">
+                        <td  c><p th:text="${book.getIsbn()}"></p></td>
+                        <td ><p th:text="${book.getTitle()}"></p></td>
+                        <td ><p th:text="${book.getPrice()}"></p></td>
+                        <td ><p th:text="${book.getAuthor_id()}"></p></td>
+
+                        <td>
+                            <a c  th:href="'/books/delete?id='+${book.getId()}" >Eliminar</a>
+                        </td>
+                        <td>
+                            <a  th:href="'/books/formularioModificar?id='+${book.getId()}"  >Modificar</a>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                <a th:href="'/books/formularioInsertar'">Insertar Libros</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

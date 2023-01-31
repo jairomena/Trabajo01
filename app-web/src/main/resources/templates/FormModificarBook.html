@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div >
+    <form  th:object="${book}"  action="/book/modificar" method="POST">
+        <h2 >Modificar new Book</h2>
+
+        <div class='mb-5 w-full'>
+            <label >ISBN: </label>
+            <input readonly="readonly" type="text" name="id" th:value="${book.id}" >
+        </div>
+
+        <div >
+            <label >ISBN: </label>
+            <input  readonly="readonly" type="text" name="isbn" th:value="${book.isbn}" >
+        </div>
+
+        <div >
+            <label >Titulo: </label>
+            <input  type="text" name="title" th:value="${book.title}" >
+        </div>
+        <div >
+            <label >Precio: </label>
+            <input type="text" name="price" th:value="${book.price}">
+        </div>
+        <div >
+            <label >IdAuthor: </label>
+            <input type="text" name="idauthor" th:value="${book.author_id}" >
+        </div>
+
+
+        <button>Modificar</button>
+    </form>
+</div>
+
+
+</body>
+</html>
